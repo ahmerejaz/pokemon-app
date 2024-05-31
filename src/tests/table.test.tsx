@@ -34,7 +34,7 @@ describe('Table Component', () => {
 
   it('has correct links for each pokemon', () => {
     setup();
-    const viewLinks = screen.getAllByRole('link', { name: 'view' });
+    const viewLinks = screen.getAllByRole('link', { name: 'View' });
     expect(viewLinks.length).toBe(mockPokemons.length);
   
     mockPokemons.forEach((pokemon, index) => {
@@ -47,6 +47,6 @@ describe('Table Component', () => {
   it('displays no rows when there are no pokemons', () => {
     render(<Router><Table pokemons={[]} /></Router>);
     expect(screen.queryByText('1')).not.toBeInTheDocument();
-    expect(screen.queryByText('view')).not.toBeInTheDocument();
+    expect(screen.queryByText('View')).not.toBeInTheDocument();
   });
 });
