@@ -22,5 +22,5 @@ This Pokémon project is a web application that allows users to view a list of P
 
 ### Clone the repository
 ```bash
-git clone https://github.com/yourusername/pokemon-project.git
+git clone https://github.com/ahmerejaz/pokemon-app.git
 cd pokemon-project
