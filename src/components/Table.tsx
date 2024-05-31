@@ -1,37 +1,41 @@
 import { Link } from 'react-router-dom';
-import { retrieveID } from '../pages/pokemon/helper';
 import { Pokemon } from '../types';
+import './styles/Table.css';
 
 type Props = {
   pokemons: Pokemon[];
 };
 
+const TableRow = ({ pokemon, index }: { pokemon: Pokemon; index: number }) => {
+  return (
+    <tr className='col'>
+      <th scope='row'>{index + 1}</th>
+      <td className='uppercase'>{pokemon.name}</td>
+      <td>
+        <Link
+          className='button'
+          to={`pokemon/${pokemon.url.split('/').splice(-2, 1)[0]}`}
+        >
+          View
+        </Link>
+      </td>
+    </tr>
+  );
+};
+
 const Table = ({ pokemons }: Props) => {
   return (
     <table className='table'>
-      <thead className='bg-dark text-light'>
+      <thead>
         <tr>
-          <th scope='col'>#</th>
-          <th scope='col'>Name</th>
-          <th scope='col' className='float-end'>
-            Action
-          </th>
+          <th>#</th>
+          <th>Name</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
-        {pokemons.map((pokemon: Pokemon, index: number) => (
-          <tr key={index}>
-            <th scope='row'>{index + 1}</th>
-            <td>{pokemon.name}</td>
-            <td className='float-end'>
-              <Link
-                className='btn btn-outline-success'
-                to={`pokemon/${retrieveID(pokemon.url)}`}
-              >
-                view
-              </Link>
-            </td>
-          </tr>
+        {pokemons.map((pokemon, index) => (
+          <TableRow key={index} pokemon={pokemon} index={index} />
         ))}
       </tbody>
     </table>
