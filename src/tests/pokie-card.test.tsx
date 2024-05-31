@@ -25,8 +25,8 @@ describe('PokieCard Component', () => {
 
   it('displays the correct weight and height', () => {
     setup();
-    const weightDisplay = screen.getByText(`weight: ${mockPokemon.weight}`);
-    const heightDisplay = screen.getByText(`height: ${mockPokemon.height}`);
+    const weightDisplay = screen.getByText(`Weight: ${mockPokemon.weight}`);
+    const heightDisplay = screen.getByText(`Height: ${mockPokemon.height}`);
     expect(weightDisplay).toBeInTheDocument();
     expect(heightDisplay).toBeInTheDocument();
   });

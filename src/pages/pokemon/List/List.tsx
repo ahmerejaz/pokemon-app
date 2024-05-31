@@ -1,7 +1,7 @@
 import { useGetPokemonsListQuery } from '../../../api/pokemon';
 
 import Table from '../../../components/Table';
-import Loader from '../../../components/Loader';
+import { Loader } from '../../../components/Loader';
 
 const List = () => {
   const { data: pokemons, error, isLoading } = useGetPokemonsListQuery('20');
@@ -10,7 +10,7 @@ const List = () => {
 
   return (
     <div className='container w-50 my-5'>
-      <center className='lead fw-bold my-3'> Pokemons for You ❤️‍🔥 </center>
+      <center className='lead fw-bold my-3'> List of Available Pokemons</center>
       <hr />
       <div className='pokemon'>
         {isLoading && <Loader />}

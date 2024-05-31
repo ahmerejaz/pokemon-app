@@ -1,7 +1,7 @@
 import './Details.css';
 import { useParams } from 'react-router-dom';
 import { useGetPokemonByIdQuery } from '../../../api/pokemon';
-import Loader from '../../../components/Loader';
+import { Loader } from '../../../components/Loader';
 import { PokieCard } from '../../../components/PokieCard';
 
 const Details = () => {
@@ -11,7 +11,7 @@ const Details = () => {
   console.log(pokemon);
   return (
     <div className='container w-50 my-5'>
-      <center className='lead fw-bold my-3'> Pokie Card for You ❤️‍🔥 </center>
+      <center className='lead fw-bold my-3'> Here is Your Pokemon </center>
       <hr />
       <div className='pokemon'>{isLoading && <Loader />}</div>
       <div className='d-flex justify-content-center'>

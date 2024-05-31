@@ -1,4 +1,5 @@
 import { PokemonDetails, PokemonType } from '../types';
+import './styles/PokieCard.css';
 
 type Props = {
   pokemon: PokemonDetails;
@@ -6,27 +7,27 @@ type Props = {
 
 export const PokieCard = ({ pokemon }: Props) => {
   return (
-    <div className='card mx-3 blogs'>
-      <img className='card-img-top' src={pokemon.image} alt={pokemon.name} />
-      <hr className='m-0' />
-      <div className='d-flex p-3 justify-content-between w-100'>
-        <div>weight: {pokemon.weight}</div>
-        <div>height: {pokemon.height}</div>
+    <div className='card'>
+      <img
+        className='card-img-top'
+        src={pokemon.image}
+        alt={`${pokemon.name}`}
+      />
+      <div className='details'>
+        <div>Weight: {pokemon.weight}</div>
+        <div>Height: {pokemon.height}</div>
       </div>
-      <div className='d-flex ps-3 justify-content-between w-100 border'>
-        <div>Types</div>
-        <div className='border-start'>
+      <div className='types'>
+        <div>Types:</div>
+        <div className='type-list'>
           {pokemon.types.map((type: PokemonType) => (
-            <div key={type.type.name}>
-              <div className='p-4'>{type.type.name}</div>
-              <hr className='m-0' />
+            <div key={type.type.name} className='type-item'>
+              {type.type.name}
             </div>
           ))}
         </div>
       </div>
-      <div className='d-flex p-3 justify-content-center w-100 bg-success text-light'>
-        <div>{pokemon.name}</div>
-      </div>
+      <div className='name'>{pokemon.name}</div>
     </div>
   );
 };
