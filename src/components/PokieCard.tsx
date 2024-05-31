@@ -4,20 +4,20 @@ type Props = {
   pokemon: PokemonDetails;
 };
 
-const PokieCard = ({ pokemon }: Props) => {
+export const PokieCard = ({ pokemon }: Props) => {
   return (
     <div className='card mx-3 blogs'>
       <img className='card-img-top' src={pokemon.image} alt={pokemon.name} />
       <hr className='m-0' />
       <div className='d-flex p-3 justify-content-between w-100'>
-        <div>width: {pokemon.weight}</div>
+        <div>weight: {pokemon.weight}</div>
         <div>height: {pokemon.height}</div>
       </div>
       <div className='d-flex ps-3 justify-content-between w-100 border'>
         <div>Types</div>
         <div className='border-start'>
           {pokemon.types.map((type: PokemonType) => (
-            <div>
+            <div key={type.type.name}>
               <div className='p-4'>{type.type.name}</div>
               <hr className='m-0' />
             </div>
@@ -30,5 +30,3 @@ const PokieCard = ({ pokemon }: Props) => {
     </div>
   );
 };
-
-export default PokieCard;

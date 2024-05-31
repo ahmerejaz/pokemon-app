@@ -2,7 +2,7 @@ import './Details.css';
 import { useParams } from 'react-router-dom';
 import { useGetPokemonByIdQuery } from '../../../api/pokemon';
 import Loader from '../../../components/Loader';
-import PokieCard from '../../../components/PokieCard';
+import { PokieCard } from '../../../components/PokieCard';
 
 const Details = () => {
   const { id } = useParams();
