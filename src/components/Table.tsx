@@ -20,7 +20,7 @@ const Table = ({ pokemons }: Props) => {
       </thead>
       <tbody>
         {pokemons.map((pokemon: Pokemon, index: number) => (
-          <tr>
+          <tr key={index}>
             <th scope='row'>{index + 1}</th>
             <td>{pokemon.name}</td>
             <td className='float-end'>
